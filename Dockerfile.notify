@@ -1,0 +1,27 @@
+FROM node:16-alpine as builder
+
+ENV NODE_ENV build
+
+WORKDIR /home/node
+COPY . /home/node
+RUN chown -R node:node /home/node
+USER node
+WORKDIR /home/node
+RUN npm ci \
+    && npm run notify:build \
+    && npm install --production
+
+# ---
+
+FROM node:16-alpine
+
+ENV NODE_ENV production
+
+USER node
+WORKDIR /home/node
+
+COPY --from=builder /home/node/package*.json /home/node/
+COPY --from=builder /home/node/node_modules/ /home/node/node_modules/
+COPY --from=builder /home/node/dist/ /home/node/dist/
+ENV STAGE=prod
+CMD ["npm", "run", "start:prod"]
