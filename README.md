@@ -1,5 +1,5 @@
 <p align="center">
-  <a target="blank"><img src="https://imgbox.com/yBtDHmp2" width="320" alt="Notify Logo" /></a>
+  <a target="blank"><img src="./logo.jpg" width="320" alt="Notify Logo" /></a>
 </p>
 
   <p align="center">A progressive framework for building efficient and scalable rule engine based Notification Engine.</p>
