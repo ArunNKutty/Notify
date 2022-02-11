@@ -110,7 +110,7 @@ Notify is an MIT-licensed open source project. It can grow thanks to the sponsor
 
 ## Stay in touch
 
-- Author - Arun Kutty
+- Author - Arun Kutty , Shyam Sunder
 
 
 ## License
